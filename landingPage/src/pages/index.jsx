@@ -1,8 +1,12 @@
+import Hero from '../components/hero'
 
 function Inicio (){
 
     return(
-        <h1>Bienvenidos</h1>
+        <section>
+            <h1>Bienvenidos</h1>
+            <Hero/>
+        </section>
     )
 }
 
