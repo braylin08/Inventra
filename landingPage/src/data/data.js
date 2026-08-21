@@ -1,7 +1,11 @@
+import ubicacion from '../assets/icono-ubicacion.png'
+import inventario from '../assets/icons8-inventario-100.png'
+import Analitica from '../assets/icons8-analítica-90.png'
+
 const datos = [
-    {titulo:"seguimiento en tiempo real",texto:"prueba", imagen:""},
-    {titulo:"Alerta de stock bajos", texto:"prueba 2", imagen:""},
-    {titulo:"Integración con ventas/facturación",texto:"prueba 3", imagen:"" }
+    {titulo:"Seguimiento en tiempo real",texto:"Monitoriza movimientos de stock con precisión milimétrica. Obtén visibilidad instantánea de cada artículo en tu almacén.", imagen:ubicacion},
+    {titulo:"Alerta de stock bajos", texto:"Reglas inteligentes para reabastecimiento automático, evitando roturas de stock y excesos de inventario.", imagen:inventario},
+    {titulo:"Integración con ventas & facturación",texto:"Reglas inteligentes para reabastecimiento automático, evitando roturas de stock y excesos de inventario.", imagen:Analitica }
 ];
 
 export default datos;
