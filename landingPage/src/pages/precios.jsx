@@ -5,7 +5,7 @@ function Precios (){
 
     return(
         <section id="Precios">
-            <h2 className="text-4xl text-center font-semibold p-4">precios</h2>
+            <h2 className="text-4xl text-center font-semibold p-4 pb-10 pt-20">precios</h2>
             <div className="grid grid-cols-3 gap-2 p-4 ">
                 {dataPrecio.map(item =>(            
                     <PreciosCard key={item.id} 

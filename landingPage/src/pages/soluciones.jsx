@@ -6,7 +6,7 @@ function Soluciones (){
 
     return(
         <section className="p-4 m-4 " id="Soluciones">
-            <h2 className="font-semibold text-4xl text-center pb-10 pt-10">Soluciones</h2>
+            <h2 className="font-semibold text-4xl text-center pb-10 pt-15">Soluciones</h2>
             <div className="grid grid-cols-2 gap-4  ">
                 {dataSoluciones.map(item =>(
                     <Card key={item.id} 
