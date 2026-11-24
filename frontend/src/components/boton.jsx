@@ -3,9 +3,8 @@
 function Boton({nombre,estilos}){
 
     return(
-        <div className="self-center">
-            <a href="#" className={estilos}>{nombre}</a>
-        </div>
+        
+        <button type="submit" className={`hover:bg-sky-700 w-full p-2    ${estilos} `}>{nombre}</button>
     );
 }
 

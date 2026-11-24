@@ -1,13 +1,46 @@
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate} from 'react-router-dom'; 
 import CampoEntrada from '../components/input.jsx';
 import Boton from '../components/boton.jsx';
 import logo from '../assets/logo-inventra.png';
+import {useState} from 'react';
+
 
 function Login() {
+
+  const navigate = useNavigate()
+
+const [formulario, setFormulario] = useState({
+  correo_eletronico:'',
+  contrasena:''
+})
+
+function manejarCambios(e){
+  const {name,value} =e.target;
+  setFormulario({...formulario,[name]:value});
+}
+
+
+function manejarEnvio(e) {
+  e.preventDefault();
+  if (!formulario.correo_eletronico || !formulario.contrasena) {
+    alert("Por favor llena todos los campos");
+    return;
+  }else if (formulario.contrasena.trim === ''){
+    console.log('no puede estar vacia la contrasena')
+    alert('no puede estar vacia la contrasena')
+  }
+
+  // Agrega esto para confirmar visualmente en la consola que la función responde:
+  console.log("Datos listos para enviar:", formulario);
+  navigate('/dashboard/inicio')
+  
+  
+
+}
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
       <section className="w-full max-w-md p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200 shadow-xl flex flex-col items-center">
-        
         
         <div className="mb-2">
           <img src={logo} alt="Logo Inventra" className="w-16 h-16 object-contain mx-auto" />
@@ -16,10 +49,26 @@ function Login() {
         <h2 className="text-2xl font-bold text-slate-800 tracking-tight">Iniciar Sesión</h2>
         <p className="text-sm text-slate-500 mt-1 mb-6 text-center">Accede al panel de control</p>
 
-        {/* Formulario */}
-        <form className="w-full space-y-4 grid">
-          <CampoEntrada titulo="Correo Electrónico" tipo="email" placeholder="usuario@gmail.com" />
-          <CampoEntrada titulo="Contraseña" tipo="password" placeholder="••••••••" />
+  {/* Formulario */}
+        <form id="formulario_login" onSubmit={manejarEnvio} className="w-full space-y-4 grid">
+
+          <CampoEntrada 
+            titulo="Correo Electrónico" 
+            tipo="email" 
+            placeholder="usuario@gmail.com" 
+            onChange={manejarCambios} 
+            value={formulario.correo_eletronico} 
+            name='correo_eletronico' 
+          />
+          
+          <CampoEntrada 
+            titulo="Contraseña" 
+            tipo="password" 
+            placeholder="••••••••" 
+            onChange={manejarCambios} 
+            value={formulario.contrasena} 
+            name="contrasena" 
+          />
 
           <div className="flex items-center justify-between text-sm pt-1">
 
@@ -33,8 +82,8 @@ function Login() {
             </Link>
           </div>
 
-          <div className="pt-2 text-center rounded text-white bg-sky-600 ">
-            <Boton nombre="Iniciar Sesión" />
+          <div className=" text-center rounded text-white bg-sky-600 ">
+            <Boton nombre="Iniciar Sesión"  />
           </div>
         </form>
 

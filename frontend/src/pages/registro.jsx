@@ -18,7 +18,7 @@ function Registrate() {
           Únete a Inventra para gestionar tu logística.
         </p>
 
-        <form className="w-full space-y-4 grid">
+        <form  className="w-full space-y-4 grid">
           <CampoEntrada 
             titulo="Nombre Completo" 
             tipo="text" 
@@ -42,7 +42,7 @@ function Registrate() {
             placeholder="••••••••" 
           />
 
-          <div className="pt-2 text-center rounded text-white bg-sky-600 ">
+          <div className="text-center rounded text-white bg-sky-600 ">
             <Boton nombre="Crear Cuenta" />
           </div>
         </form>
